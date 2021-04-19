@@ -7,22 +7,19 @@ import {
   AutoIncrement,
 } from 'sequelize-typescript';
 
-@Table({ timestamps: false, paranoid: true, tableName: 'room' })
-export class Room extends Model<Room> {
+@Table({ timestamps: false, paranoid: true, tableName: 'question' })
+export class Question extends Model<Question> {
   @PrimaryKey
   @AutoIncrement
   @Column({ type: DataType.BIGINT({ length: 20 }) })
-  room_idx: number;
+  question_idx: number;
 
   @Column
   category_idx: number;
 
   @Column
-  room_code: string;
+  question_name: string;
 
   @Column
-  regist_datetime: Date;
-
-  @Column
-  update_datetime: Date;
+  question_type: number;
 }
