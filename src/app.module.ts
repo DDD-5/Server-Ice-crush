@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { config } from './config';
 import { User } from './model/user.model';
+import { Room } from './model/room.model';
+import { Question } from './model/question.model';
+import { Category } from './model/category.model';
 
 @Module({
   imports: [
@@ -14,7 +17,7 @@ import { User } from './model/user.model';
       username: config.db_user_name,
       password: config.db_password,
       database: config.db_name,
-      models: [User],
+      models: [User, Room, Question, Category],
     }),
   ],
   controllers: [AppController],
