@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 export const config: any = {
   db_host: process.env.DB_HOST,
   db_port: process.env.PORT,
