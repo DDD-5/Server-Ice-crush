@@ -7,9 +7,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "set NODE_ENV=development && nodemon -w src --ext ts --exec ts-node src/main.ts",
+    "build": "set NODE_ENV=development && forever start -v -c ts-node src/main.ts",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -28,6 +28,7 @@
     "@types/sequelize": "^4.28.9",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "forever": "^3.0.4",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
     "reflect-metadata": "^0.1.13",
